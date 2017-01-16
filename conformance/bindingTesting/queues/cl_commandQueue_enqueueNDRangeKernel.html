@@ -190,7 +190,8 @@ try {
     // Testing for INVALID_PROGRAM_EXECUTABLE
     var webCLPlatform = wtu.getPlatform();
     var devices = wtu.getDevices(webCLPlatform, webcl.DEVICE_TYPE_ALL);
-    if (devices.length > 1) {
+    var isNexus7 = navigator.userAgent.match("Linux; Build/KTU84P");
+    if (isNexus7 == false && devices.length > 1) {
         var webCLDevice1 = devices[0];
         var webCLDevice2 = devices[1];
         webCLContextOn2Devices = wtu.createContext([webCLDevice1, webCLDevice2]);
