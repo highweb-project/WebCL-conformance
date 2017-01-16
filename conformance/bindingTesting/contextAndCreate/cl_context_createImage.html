@@ -91,10 +91,10 @@ try {
     webCLImageDescriptorZeroHeight = wtu.getSupportedImageFormats(webCLContext, webcl.MEM_READ_ONLY, imageWidth, invalidImageHeight);
     shouldThrowExceptionName("webCLContext.createImage(webcl.MEM_READ_WRITE, webCLImageDescriptorZeroHeight);", "INVALID_IMAGE_SIZE");
 
-    var webCLImageDescriptorWidthString = wtu.getSupportedImageFormats(webCLContext, webcl.MEM_READ_ONLY, "10", imageHeight);
+    var webCLImageDescriptorWidthString = wtu.getSupportedImageFormats(webCLContext, webcl.MEM_READ_ONLY, "a10", imageHeight);
     shouldThrowExceptionName("webCLContext.createImage(webcl.MEM_READ_WRITE, webCLImageDescriptorWidthString);", "INVALID_IMAGE_SIZE");
 
-    var webCLImageDescriptorHeightString = wtu.getSupportedImageFormats(webCLContext, webcl.MEM_READ_ONLY, imageWidth, "10");
+    var webCLImageDescriptorHeightString = wtu.getSupportedImageFormats(webCLContext, webcl.MEM_READ_ONLY, imageWidth, "a10");
     shouldThrowExceptionName("webCLContext.createImage(webcl.MEM_READ_WRITE, webCLImageDescriptorHeightString);", "INVALID_IMAGE_SIZE");
 
     var contextDeviceArray = webCLContext.getInfo(webcl.CONTEXT_DEVICES);
